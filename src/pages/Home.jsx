@@ -30,39 +30,39 @@ function Home() {
       <div style={{
         display: "flex",
         alignItems: "center",
-        padding: 20,
+        padding: 24,
         background: "#0B6B74",
         color: "white",
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
-        marginBottom: 15
+        borderBottomLeftRadius: 28,
+        borderBottomRightRadius: 28,
+        marginBottom: 20
       }}>
 
         {/* 이니셜 */}
         <div style={{
-          width: 55,
-          height: 55,
+          width: 65,
+          height: 65,
           borderRadius: "50%",
           background: "rgba(255,255,255,0.2)",
-          fontSize: 22,
-          fontWeight: "700",
+          fontSize: 26,
+          fontWeight: "800",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginRight: 15
+          marginRight: 18
         }}>
           {user.name[0]}
         </div>
 
         {/* 텍스트 */}
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 18, fontWeight: "700" }}>
+          <div style={{ fontSize: 20, fontWeight: "800" }}>
             {user.name}
           </div>
-          <div style={{ fontSize: 13 }}>
+          <div style={{ fontSize: 14 }}>
             {user.role}
           </div>
-          <div style={{ fontSize: 11, opacity: 0.8 }}>
+          <div style={{ fontSize: 12, opacity: 0.85 }}>
             {user.org}
           </div>
         </div>
@@ -71,17 +71,17 @@ function Home() {
         <div
           onClick={() => setShowQR(true)}
           style={{
-            width: 55,
-            height: 55,
+            width: 60,
+            height: 60,
             background: "#ffffff",
             color: "#0B6B74",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            borderRadius: 12,
-            fontWeight: "600",
+            borderRadius: 14,
+            fontWeight: "700",
             cursor: "pointer",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+            boxShadow: "0 6px 16px rgba(0,0,0,0.2)"
           }}
         >
           QR
@@ -90,11 +90,11 @@ function Home() {
       </div>
 
       {/* 🟡 메뉴 */}
-      <div style={{ padding: 15 }}>
+      <div style={{ padding: 18 }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gap: 15
+          gridTemplateColumns: "1fr 1fr",
+          gap: 18
         }}>
           {menus.map((menu, i) => (
             <div
@@ -102,10 +102,10 @@ function Home() {
               onClick={() => navigate(menu.path)}
               style={{
                 background: "#ffffff",
-                borderRadius: 20,
-                padding: 22,
+                borderRadius: 24,
+                padding: 28,
                 textAlign: "center",
-                boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
                 cursor: "pointer",
                 transition: "all 0.15s ease"
               }}
@@ -114,14 +114,14 @@ function Home() {
               onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-3px)"}
               onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}
             >
-              <div style={{ fontSize: 32, marginBottom: 8 }}>
+              <div style={{ fontSize: 40, marginBottom: 12 }}>
                 {menu.icon}
               </div>
 
               <div style={{
-                fontSize: 14,
-                fontWeight: "600",
-                color: "#333"
+                fontSize: 16,
+                fontWeight: "700",
+                color: "#222"
               }}>
                 {menu.title}
               </div>
@@ -131,15 +131,16 @@ function Home() {
       </div>
 
       {/* 🟢 하단 */}
-      <div style={{ padding: 15 }}>
+      <div style={{ padding: 18 }}>
         <div style={{
           background: "#ffffff",
-          padding: 18,
-          borderRadius: 14,
-          marginBottom: 10,
+          padding: 20,
+          borderRadius: 16,
+          marginBottom: 12,
           textAlign: "center",
-          fontWeight: "500",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
+          fontWeight: "600",
+          fontSize: 15,
+          boxShadow: "0 6px 16px rgba(0,0,0,0.06)"
         }}>
           📘 학생규정 및 학칙
         </div>
@@ -148,12 +149,13 @@ function Home() {
           onClick={() => window.open("https://uwins.ulsan.ac.kr", "_blank")}
           style={{
             background: "#ffffff",
-            padding: 18,
-            borderRadius: 14,
+            padding: 20,
+            borderRadius: 16,
             textAlign: "center",
-            fontWeight: "500",
+            fontWeight: "600",
+            fontSize: 15,
             cursor: "pointer",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
+            boxShadow: "0 6px 16px rgba(0,0,0,0.06)"
           }}
         >
           🌐 UWINS 바로가기
@@ -163,7 +165,6 @@ function Home() {
       {/* 🔥 하단 로고 */}
       <div style={{
         marginTop: 30,
-        paddingBottom: 30,
         display: "flex",
         justifyContent: "center"
       }}>
@@ -171,23 +172,24 @@ function Home() {
           src="/logo.png"
           alt="울산대학교 의과대학"
           style={{
-            width: "160px",
-            opacity: 0.85
+            width: "170px",
+            opacity: 0.9
           }}
         />
       </div>
 
+      {/* 🔥 베타 문구 */}
       <div style={{
-  textAlign: "center",
-  fontSize: 11,
-  color: "#888",
-  paddingBottom: 30,
-  lineHeight: 1.5
-}}>
-  본 서비스는 울산대학교 의과대학 학생 지원을 위한<br/>
-  베타(시범 운영) 버전입니다.<br/>
-  일부 기능은 테스트 중이며 향후 개선 예정입니다.
-</div>
+        textAlign: "center",
+        fontSize: 11,
+        color: "#888",
+        padding: "10px 20px 40px",
+        lineHeight: 1.5
+      }}>
+        본 서비스는 울산대학교 의과대학 학생 지원을 위한<br />
+        베타(시범 운영) 버전입니다.<br />
+        일부 기능은 테스트 중이며 향후 개선 예정입니다.
+      </div>
 
       {/* 🔥 QR 전체화면 */}
       {showQR && (
@@ -206,20 +208,17 @@ function Home() {
             zIndex: 999
           }}
         >
-          <div
-            style={{
-              width: 300,
-              height: 300,
-              background: "#ffffff",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 16
-            }}
-          >
+          <div style={{
+            width: 300,
+            height: 300,
+            background: "#ffffff",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 16
+          }}>
             <QRCodeCanvas value={user.id} size={220} />
-
             <div style={{ marginTop: 10, fontSize: 12 }}>
               {user.id}
             </div>
