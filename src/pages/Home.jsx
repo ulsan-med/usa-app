@@ -177,6 +177,18 @@ function Home() {
         />
       </div>
 
+      <div style={{
+  textAlign: "center",
+  fontSize: 11,
+  color: "#888",
+  paddingBottom: 30,
+  lineHeight: 1.5
+}}>
+  본 서비스는 울산대학교 의과대학 학생 지원을 위한<br/>
+  베타(시범 운영) 버전입니다.<br/>
+  일부 기능은 테스트 중이며 향후 개선 예정입니다.
+</div>
+
       {/* 🔥 QR 전체화면 */}
       {showQR && (
         <div
