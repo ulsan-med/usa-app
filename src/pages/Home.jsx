@@ -8,8 +8,8 @@ function Home() {
   const [showQR, setShowQR] = useState(false);
 
   const user = {
-    name: "임영석",
-    role: "학장",
+    name: "권순찬",
+    role: "부학장",
     org: "울산대학교 의과대학",
     id: "UlsanMed_0001"
   };
@@ -158,6 +158,23 @@ function Home() {
         >
           🌐 UWINS 바로가기
         </div>
+      </div>
+
+      {/* 🔥 하단 로고 */}
+      <div style={{
+        marginTop: 30,
+        paddingBottom: 30,
+        display: "flex",
+        justifyContent: "center"
+      }}>
+        <img
+          src="/logo.png"
+          alt="울산대학교 의과대학"
+          style={{
+            width: "160px",
+            opacity: 0.85
+          }}
+        />
       </div>
 
       {/* 🔥 QR 전체화면 */}
