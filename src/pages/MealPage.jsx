@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
 
 function MealPage() {
   const [meal, setMeal] = useState(null);
@@ -28,7 +29,7 @@ function MealPage() {
 
   return (
     <div style={{ padding: "16px", background: "#f5f5f5", minHeight: "100vh" }}>
-      <h2 style={{ textAlign: "center" }}>식단</h2>
+     <Header title="식단" />
 
       <div style={{ background: "#fff", padding: "12px", borderRadius: "12px", marginBottom: "15px" }}>
         ⚠ 알레르기 정보: 일부 포함될 수 있습니다.
