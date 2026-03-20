@@ -1,2 +1,9 @@
 
 ±Í«„∫Í ¡÷º“ : https://github.com/ulsan-med/usa-app.git
+
+git add .
+git commit -m "force deploy"
+git push
+
+
+npm run dev 

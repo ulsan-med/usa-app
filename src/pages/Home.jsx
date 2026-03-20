@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import EmergencyNotice from "../components/EmergencyNotice";
 
 function Home() {
 
@@ -14,17 +15,23 @@ function Home() {
     id: "UlsanMed_0001"
   };
 
+  // ✅ 순서 + 아이콘 수정 완료
   const menus = [
     { title: "식단표", icon: "🍱", path: "/meal" },
+    { title: "공지사항", icon: "📢", path: "/notice" },
+
     { title: "강의시간표", icon: "📅", path: "/schedule" },
-    { title: "실습일정", icon: "🏥", path: "/practice" },
+    { title: "실습일정", icon: "🔬", path: "/practice" },
+
     { title: "교수소개", icon: "👨‍⚕️", path: "/professor" },
-    { title: "교학행정실", icon: "🏢", path: "/office" },
-    { title: "공지사항", icon: "📢", path: "/notice" }
+    { title: "교학행정실", icon: "🏢", path: "/office" }
   ];
 
   return (
     <div style={{ background: "#f4f7f9", minHeight: "100vh" }}>
+
+      {/* 🚨 여기! 긴급공지 위치 */}
+      <EmergencyNotice />
 
       {/* 🔵 상단 헤더 */}
       <div style={{
@@ -38,7 +45,6 @@ function Home() {
         marginBottom: 20
       }}>
 
-        {/* 이니셜 */}
         <div style={{
           width: 65,
           height: 65,
@@ -54,7 +60,6 @@ function Home() {
           {user.name[0]}
         </div>
 
-        {/* 텍스트 */}
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 20, fontWeight: "800" }}>
             {user.name}
@@ -67,7 +72,6 @@ function Home() {
           </div>
         </div>
 
-        {/* QR 버튼 */}
         <div
           onClick={() => setShowQR(true)}
           style={{
@@ -162,7 +166,7 @@ function Home() {
         </div>
       </div>
 
-      {/* 🔥 하단 로고 */}
+      {/* 🔥 로고 */}
       <div style={{
         marginTop: 30,
         display: "flex",
@@ -191,7 +195,7 @@ function Home() {
         일부 기능은 테스트 중이며 향후 개선 예정입니다.
       </div>
 
-      {/* 🔥 QR 전체화면 */}
+      {/* 🔥 QR */}
       {showQR && (
         <div
           onClick={() => setShowQR(false)}
